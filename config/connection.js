@@ -1,3 +1,4 @@
+var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -13,6 +14,7 @@ module.exports = function(app) {
         if (err) throw err;
 
         connection.query("SELECT * FROM burgers", function(err, res) {
+            console.log(res);
 
         });
     });

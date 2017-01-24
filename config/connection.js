@@ -14,7 +14,6 @@ module.exports = function(app) {
         if (err) throw err;
 
         connection.query("SELECT * FROM burgers", function(err, res) {
-            console.log(res);
 
         });
     });

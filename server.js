@@ -15,6 +15,7 @@ app.set("view engine", "handlebars");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride("_method"));
+app.use(express.static(__dirname + '/public/assets'));
 
 var routes = require("./controllers/burgers_controller.js");
 app.use("/", routes);

@@ -1,5 +1,19 @@
-<ul>
-    {{#each burgers}}
-    <li>{{burger_name}}</li>
-    {{/each}}
-</ul>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-3 text-center">Burgers to Devour</div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-3 text-center">Devoured Burgers</div>
+		<div class="col-sm-2"></div>
+	</div>
+	<hr>
+	{{#each burgers}}
+	<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-3">{{burger_name}}</div>
+		<div class="col-sm-2"><button class="btn btn-primary center-block">Devour</button></div>
+		<div class="col-sm-3"></div>
+		<div class="col-sm-2"></div>
+	</div>
+	{{/each}}
+</div>

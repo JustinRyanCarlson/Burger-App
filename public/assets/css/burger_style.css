@@ -5,3 +5,7 @@
 body {
     background-color: #fff8e1;
 }
+
+.button-margins {
+    margin: 3px auto;
+}

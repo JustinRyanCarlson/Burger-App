@@ -6,12 +6,14 @@ var burgers = require("../models/burgers.js");
 router.get("/", function(req, res) {
     burgers.read(function(data) {
         res.render('index.handlebars', { burgers: data });
+
     });
 });
 
 router.post("/", function(req, res) {
     burgers.create(req.body.burger_name);
-    res.redirect("/");
+    // res.redirect("/");
+    res.send('success');
 });
 
 

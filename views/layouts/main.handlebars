@@ -29,7 +29,7 @@
   			<div class="row">
   				<div class="col-sm-4"></div>
   				<div class="col-sm-4">
-  					<button type="button" class="btn btn-primary center-block">Submit Burger</button>
+  					<button type="button" class="btn btn-primary center-block" id="submit">Submit Burger</button>
   				</div>
   				<div class="col-sm-4"></div>
   			</div>
@@ -37,7 +37,18 @@
   	</div>
     {{{body}}}
     <!-- not sure if they want the js in this or in a external js file -->
-    <script type="text/javascript"></script>
+    <script
+  		src="https://code.jquery.com/jquery-3.1.1.min.js"
+		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  		crossorigin="anonymous"></script>
+    <script type="text/javascript">
+    	$('#submit').on('click', function() {
+    		var newBurger = {
+    			burger_name: $('#burger_input').val().trim(),
+    		};
+    		$.post('/', newBurger);
+    	});
+    </script>
 </body>
 
 </html>

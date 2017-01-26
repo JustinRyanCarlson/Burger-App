@@ -7,10 +7,10 @@ var burger = {
         });
     },
     create: function(name) {
-        connection.query("INSERT INTO `burgers` (`id`, `" + name + "`, `devoured`, `data`) " +
-            "VALUES (NULL, 'Triple Cheeseburger', FALSE, CURRENT_TIMESTAMP);",
+        connection.query("INSERT INTO `burgers` (`id`, `burger_name`, `devoured`, `data`) " +
+            "VALUES (NULL, '" + name + "', FALSE, CURRENT_TIMESTAMP);",
             function(err, res) {
-
+                if (err) throw err;
             });
     }
 

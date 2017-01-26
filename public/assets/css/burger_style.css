@@ -9,3 +9,7 @@ body {
 .button-margins {
     margin: 3px auto;
 }
+
+.text-top-margin {
+    margin-top: 12px;
+}

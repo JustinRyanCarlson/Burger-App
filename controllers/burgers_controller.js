@@ -10,7 +10,6 @@ router.get("/", function(req, res) {
 });
 
 router.post("/", function(req, res) {
-    console.log(req.body.burger_name);
     burgers.create(req.body.burger_name);
     res.redirect("/");
 });

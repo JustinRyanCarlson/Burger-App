@@ -10,6 +10,10 @@ body {
     margin: 3px auto;
 }
 
-.text-top-margin {
-    margin-top: 12px;
+.text-margin {
+    margin: 12px auto;
+}
+
+.greyed-out-text {
+    color: grey;
 }

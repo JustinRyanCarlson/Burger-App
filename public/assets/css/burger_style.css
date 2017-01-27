@@ -17,3 +17,7 @@ body {
 .greyed-out-text {
     color: grey;
 }
+
+textarea {
+    text-align: center;
+}

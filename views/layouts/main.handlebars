@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
 	<div class="jumbotron">
     	<h1 class="text-center">Eat the Burger!</h1> 
     	<img class="center-block" src="/img/burger.png" alt="burger_pic">
@@ -35,23 +36,60 @@
   			</div>
   		</div>
   	</div>
+
+  	<div class="modal fade" id="myModal">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+		    	<div class="modal-header">
+		        	<h5 class="modal-title">Warning</h5>
+		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          		<span aria-hidden="true">&times;</span>
+		        	</button>
+		      	</div>
+		      	<div class="modal-body">
+		        	<p>You must enter a burger name</p>
+		      	</div>
+		      	<div class="modal-footer">
+		        	<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		      	</div>
+		    </div>
+		</div>
+	</div>
+
     {{{body}}}
+
     <script
   		src="https://code.jquery.com/jquery-3.1.1.min.js"
 		integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  		crossorigin="anonymous"></script>
-    <script type="text/javascript">
-    	$('#submit').on('click', function() {
-    		var newBurger = {
-    			burger_name: $('#burger_input').val().trim(),
-    		};
+  		crossorigin="anonymous">
+  	</script>
 
-    		$.post('/', newBurger, function(status){
-    			if (status === 'success') {
-    				window.location.href='/';	
-    			}
-    		});
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+
+    	$(document).keypress(function(e) {
+    		if(e.which == 13) {
+        		$('#submit').trigger('click');
+    		}
+		});
+
+    	$('#submit').on('click', function() {
+    		if ($('#burger_input').val() === '') {
+    			$("#myModal").modal('show');
+    		} else {
+    			var newBurger = {
+    				burger_name: $('#burger_input').val().trim(),
+    			};
+
+    			$.post('/', newBurger, function(status){
+    				if (status === 'success') {
+    					window.location.href='/';	
+    				}
+    			});
+    		}
     	});
+
 
     	$('.devour').on('click', function() {
 		    $.ajax({
@@ -62,6 +100,7 @@
    			window.location.href='/';
 		});
     </script>
+
 </body>
 
 </html>

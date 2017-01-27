@@ -12,8 +12,11 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
     burgers.create(req.body.burger_name);
-    // res.redirect("/");
     res.send('success');
+});
+
+router.put("/:id", function(req, res) {
+    burgers.update(req.params.id);
 });
 
 

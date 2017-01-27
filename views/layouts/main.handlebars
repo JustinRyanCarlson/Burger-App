@@ -52,6 +52,15 @@
     			}
     		});
     	});
+
+    	$('.devour').on('click', function() {
+		    $.ajax({
+		    	type: 'PUT', 
+		   		dataType: 'json', 
+		    	url: "/" + $(this).data("burger_id")
+		    });
+   			window.location.href='/';
+		});
     </script>
 </body>
 

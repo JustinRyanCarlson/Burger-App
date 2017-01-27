@@ -3,6 +3,7 @@ var connection = require("../config/connection.js");
 var burger = {
     read: function(cb) {
         connection.query("SELECT * from burgers", function(err, res) {
+            if (err) throw err;
             cb(res);
         });
     },
@@ -12,8 +13,13 @@ var burger = {
             function(err, res) {
                 if (err) throw err;
             });
+    },
+    update: function(burger_id) {
+        connection.query("UPDATE burgers SET devoured=1 WHERE id='" + burger_id + "';",
+            function(err, res) {
+                if (err) throw err;
+            });
     }
-
 };
 
 module.exports = burger;

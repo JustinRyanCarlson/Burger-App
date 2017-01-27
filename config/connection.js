@@ -1,6 +1,8 @@
 var mysql = require('mysql');
 var connection;
 
+// Sets the connection for is the user is using this app locally or 
+// from Heroku.
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
@@ -13,6 +15,7 @@ if (process.env.JAWSDB_URL) {
     });
 }
 
+// Connects to the database.
 connection.connect(function(err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId);

@@ -2,7 +2,7 @@
 
 ## About
 
-### Installation and Use
+### Local Installation and Use
 1. Clone this repo to your local machine.
 2. Navigate using the command line to the root directory of this project on your local machine.
 3. Enter `npm install` into the command line to download all the dependencies.

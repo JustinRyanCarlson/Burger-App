@@ -6,7 +6,6 @@ var burgers = require("../models/burgers.js");
 router.get("/", function(req, res) {
     burgers.read(function(data) {
         res.render('index.handlebars', { burgers: data });
-
     });
 });
 
